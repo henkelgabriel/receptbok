@@ -1,0 +1,30 @@
+# .gitignore for the main Recept folder
+
+# Frontend (my-recipe-book-frontend) ignores
+my-recipe-book-frontend/node_modules/
+my-recipe-book-frontend/dist/
+my-recipe-book-frontend/.env.local
+my-recipe-book-frontend/.vite/
+
+# Backend (my-recipe-book-backend) ignores
+my-recipe-book-backend/target/
+my-recipe-book-backend/.idea/         # IntelliJ IDEA specific files
+my-recipe-book-backend/.classpath
+my-recipe-book-backend/.project
+my-recipe-book-backend/.settings/     # Eclipse specific files
+my-recipe-book-backend/bin/           # Compiled classes if not in target
+my-recipe-book-backend/*.log
+my-recipe-book-backend/pom.xml.tag
+my-recipe-book-backend/pom.xml.versionsBackup
+my-recipe-book-backend/pom.xml.next
+my-recipe-book-backend/release.properties
+my-recipe-book-backend/dependency-reduced-pom.xml
+my-recipe-book-backend/build/ # If you use Gradle
+
+# General ignores (might not be directly under Recept, but good practice)
+.DS_Store           # macOS specific
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env                # Environment variables
+.vscode/            # VS Code specific settings (optional, but good)

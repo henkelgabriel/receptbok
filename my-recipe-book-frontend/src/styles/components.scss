@@ -1,0 +1,119 @@
+
+
+// Importera variabler
+@import 'variables';
+
+// Anpassad knapp-stil för kokbokstema
+.btn-cookbook-primary {
+    background-color: $cookbook-accent !important;
+    color: white !important;
+    border: 1px solid $cookbook-primary !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-right: 0.5rem; // Mellanslag mellan knappar
+
+    &:hover {
+        background-color: $cookbook-primary !important;
+        border-color: $cookbook-accent !important;
+    }
+}
+
+// Övriga Bootstrap-knappar för att matcha temat lite bättre
+.btn-secondary {
+    background-color: $cookbook-secondary !important;
+    color: $cookbook-text-light !important;
+    border-color: darken($cookbook-secondary, 10%) !important;
+
+    &:hover {
+        background-color: darken($cookbook-secondary, 10%) !important;
+        border-color: $cookbook-text-light !important;
+    }
+}
+
+// Receptkort på HomePage
+.recipe-card {
+    border: none; // Ta bort standard Bootstrap-kant
+    border-radius: $border-radius-base;
+    box-shadow: $box-shadow-subtle;
+    overflow: hidden; // Klipp av innehåll som går utanför de rundade hörnen
+    height: 100%; // Viktigt för h-100 i grid
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    &:hover {
+        transform: translateY(-5px); // Lyft kortet lite vid hover
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); // Större skugga
+    }
+
+    .card-img-top {
+        height: 200px; // Fixerad höjd för bilderna i korten
+        object-fit: cover; // Säkerställer att bilden fyller ut utan att förvrängas
+        border-bottom: 1px solid $cookbook-secondary; // En liten kant under bilden
+    }
+
+    .card-body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; // Skjuter ner länken
+    }
+
+    .card-title {
+        color: $cookbook-primary;
+        margin-bottom: 0.75rem;
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        flex-grow: 1; // Tar upp tillgängligt utrymme
+    }
+
+    .btn {
+        margin-top: 1rem; // Marginal mellan text och knapp
+    }
+}
+
+// Listor (ingredienser, instruktioner)
+ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 25px; // Indrag för listpunkter/nummer
+}
+
+ul li, ol li {
+    margin-bottom: 0.5rem;
+    color: $cookbook-text-light;
+}
+
+ul {
+    list-style: none; // Ta bort standard punkt
+
+    li::before {
+        content: "\2022"; // Anpassad bullet point
+        color: $cookbook-accent;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+}
+
+ol {
+    counter-reset: my-awesome-counter; // Återställ räknaren
+
+    li {
+        counter-increment: my-awesome-counter; // Räkna upp
+
+        &::before {
+            content: counter(my-awesome-counter) ". "; // Anpassad numrering
+            color: $cookbook-accent;
+            font-weight: bold;
+            display: inline-block;
+            width: 1.5em; // Justera för att få utrymme
+            margin-left: -1.5em; // Justera för att få utrymme
+            text-align: right;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+
+// Importera variabler
+@import 'variables';
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: $cookbook-primary;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid $cookbook-secondary;
+    border-radius: 5px;
+    background-color: #f8f8f8; // Lätt grå för att sticka ut lite
+    font-size: 1rem;
+    color: $cookbook-text-light;
+    box-sizing: border-box; // Inkludera padding i bredden
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+        border-color: $cookbook-accent;
+        box-shadow: 0 0 0 0.2rem rgba($cookbook-accent, 0.25); // Lätt fokus-skugga
+        outline: none;
+        background-color: white;
+    }
+}
+
+textarea.form-control {
+    min-height: 120px; // Höjd för textareas
+    resize: vertical; // Tillåt endast vertikal storleksändring
+}
+
+// Stilar för bildförhandsgranskning i AddEditRecipePage
+.recipe-form-page {
+    img {
+        border: 1px solid $cookbook-secondary;
+        border-radius: 4px;
+        margin-top: 10px;
+    }
+}

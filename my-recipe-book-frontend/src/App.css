@@ -1,0 +1,197 @@
+/* src/App.css */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar li a:hover {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+  color: #007bff;
+}
+
+/* --- Receptlistan --- */
+.recipe-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.recipe-card {
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recipe-card img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.recipe-card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.recipe-card p {
+  font-size: 0.9em;
+  color: #666;
+  flex-grow: 1; 
+}
+
+.recipe-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-card a:hover {
+  background-color: #0056b3;
+}
+
+/* --- Formulär --- */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group input[type="file"] {
+  width: calc(100% - 22px); /* 100% minus padding och border */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Se till att padding är inkluderad i bredden */
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.recipe-form-page button,
+.recipe-detail-page button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-form-page button:hover,
+.recipe-detail-page button:hover {
+  background-color: #218838;
+}
+
+.recipe-detail-page button[style*="background-color: red"] {
+  background-color: #dc3545;
+}
+
+.recipe-detail-page button[style*="background-color: red"]:hover {
+  background-color: #c82333;
+}
+
+/* --- Detaljvy --- */
+.recipe-detail-page {
+  text-align: left;
+}
+
+.recipe-detail-page img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block; /* Tar bort extra utrymme under bilden */
+}
+
+.recipe-detail-page ul,
+.recipe-detail-page ol {
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.recipe-detail-page li {
+  margin-bottom: 5px;
+}
+
+.recipe-actions {
+  margin-top: 20px;
+}

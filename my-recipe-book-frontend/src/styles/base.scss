@@ -1,0 +1,67 @@
+
+
+
+@import 'variables';
+
+body {
+    font-family: $font-family-base;
+    background-color: $cookbook-background;
+    color: $cookbook-text-light;
+    line-height: 1.6;
+    padding: 2rem 1rem; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-headings;
+    color: $cookbook-primary;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+// Stilar för de Bootstrap-containrar som används 
+.container-fluid, .container {
+    max-width: $container-max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    background-color: $cookbook-content-bg;
+    box-shadow: $box-shadow-light;
+    border-radius: $border-radius-base;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+// Bilder
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    border-radius: $border-radius-base;
+    box-shadow: $box-shadow-subtle;
+    object-fit: cover;
+}
+
+// Länkar
+a {
+    color: $cookbook-accent;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $cookbook-primary;
+        text-decoration: underline;
+    }
+}
+
+// Felmeddelanden
+.alert-danger {
+    color: #dc3545 !important; 
+    background-color: #f8d7da !important; 
+    border-color: #f5c6cb !important; 
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    padding: 1rem;
+}
