@@ -73,7 +73,7 @@ public class RecipeController {
             @RequestParam(value = "ingredients", required = false) String ingredients,
             @RequestParam(value = "instructions", required = false) String instructions,
             @RequestParam(value = "image", required = false) MultipartFile imageFile,
-            @RequestParam(value = "imageUrl", required = false) String existingImageUrl) { // För att behålla befintlig bild-URL om ingen ny laddas upp
+            @RequestParam(value = "imageUrl", required = false) String existingImageUrl) { 
 
         Optional<Recipe> existingRecipeOptional = recipeRepository.findById(id);
         if (!existingRecipeOptional.isPresent()) {

@@ -1,5 +1,5 @@
-// src/main/java/com/myrecipebook/backend/FileStorageService.java (eller src/main/java/com/myrecipebook/backend/service/FileStorageService.java)
-package com.myrecipebook.backend; // Eller com.myrecipebook.backend.service;
+
+package com.myrecipebook.backend; 
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -33,13 +33,13 @@ public class FileStorageService {
             fileExtension = originalFilename.substring(originalFilename.lastIndexOf("."));
         }
 
-        // Generera ett unikt filnamn
+       
         String fileName = UUID.randomUUID().toString() + fileExtension;
         Path targetLocation = this.fileStorageLocation.resolve(fileName);
 
         try {
             Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
-            return fileName; // Returnera det unika filnamnet
+            return fileName; 
         } catch (IOException ex) {
             throw new RuntimeException("Kunde inte lagra filen " + fileName + ". Försök igen!", ex);
         }
@@ -51,7 +51,7 @@ public class FileStorageService {
             Files.deleteIfExists(filePath);
         } catch (IOException ex) {
             System.err.println("Kunde inte radera filen: " + fileName + ". Fel: " + ex.getMessage());
-            // Kasta ingen exception här, bara logga. Filen kanske inte finns, men det är ok.
+            
         }
     }
 }

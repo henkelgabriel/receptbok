@@ -28,7 +28,7 @@ function AddEditRecipePage() {
           const response = await axios.get(`${API_BASE_URL}/${id}`);
           setRecipe({
             ...response.data,
-            image: null // Se till att bilden inte är förifylld vid redigering om man inte väljer ny
+            image: null 
           });
         } catch (err) {
           console.error("Kunde inte hämta recept för redigering:", err);
@@ -65,7 +65,7 @@ function AddEditRecipePage() {
     if (recipe.image) {
       formData.append('image', recipe.image);
     } else if (isEditing && recipe.imageUrl) {
-      formData.append('imageUrl', recipe.imageUrl); // Behåll befintlig bild-URL om ingen ny väljs
+      formData.append('imageUrl', recipe.imageUrl); 
     }
 
     try {
@@ -88,17 +88,17 @@ function AddEditRecipePage() {
   };
 
   return (
-    <div className="container my-5 recipe-form-page"> {/* Bootstrap container med vertikal marginal */}
-      <h2 className="mb-4 text-center">{isEditing ? 'Redigera Recept' : 'Lägg till Nytt Recept'}</h2> {/* Rubrik med marginal */}
-      {error && <div className="alert alert-danger text-center" role="alert">{error}</div>} {/* Bootstrap alert för felmeddelanden */}
+    <div className="container my-5 recipe-form-page"> {}
+      <h2 className="mb-4 text-center">{isEditing ? 'Redigera Recept' : 'Lägg till Nytt Recept'}</h2> {}
+      {error && <div className="alert alert-danger text-center" role="alert">{error}</div>} {}
       <form onSubmit={handleSubmit}>
-        <div className="mb-3"> {/* Bootstrap marginal nedåt för varje formulärgrupp */}
-          <label htmlFor="title" className="form-label">Titel:</label> {/* Bootstrap form-label */}
+        <div className="mb-3"> {/}
+          <label htmlFor="title" className="form-label">Titel:</label> {}
           <input
             type="text"
             id="title"
             name="title"
-            className="form-control" // Bootstrap form-control
+            className="form-control" 
             value={recipe.title}
             onChange={handleChange}
             required
@@ -140,21 +140,21 @@ function AddEditRecipePage() {
             type="file"
             id="image"
             name="image"
-            className="form-control" // Bootstrap form-control
+            className="form-control" 
             accept="image/*"
             onChange={handleChange}
           />
-          {/* Visa befintlig bild om i redigeringsläge och bild-URL finns */}
+          {}
           {isEditing && recipe.imageUrl && !recipe.image && (
             <img src={recipe.imageUrl} alt="Nuvarande bild" className="img-thumbnail mt-3 d-block mx-auto" style={{ maxWidth: '200px' }} />
           )}
-          {/* Förhandsgranska ny bild om en väljs */}
+          {}
           {recipe.image && (
             <img src={URL.createObjectURL(recipe.image)} alt="Ny bild" className="img-thumbnail mt-3 d-block mx-auto" style={{ maxWidth: '200px' }} />
           )}
         </div>
-        <div className="d-grid gap-2"> {/* Bootstrap för att stapla knappar vertikalt med mellanslag */}
-          <button type="submit" className="btn btn-cookbook-primary"> {/* Anpassad knappstil */}
+        <div className="d-grid gap-2"> {}
+          <button type="submit" className="btn btn-cookbook-primary"> {}
             {isEditing ? 'Spara Ändringar' : 'Lägg till Recept'}
           </button>
         </div>

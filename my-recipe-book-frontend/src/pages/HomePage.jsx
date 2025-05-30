@@ -38,11 +38,11 @@ function HomePage() {
   if (error) return <div className="alert alert-danger text-center my-5" role="alert">{error}</div>;
 
   return (
-    <div className="container my-5"> {/* Bootstrap container med vertikal marginal */}
-      <h2 className="mb-4">Alla Recept</h2> {/* Rubrik med marginal nedåt */}
+    <div className="container my-5"> {}
+      <h2 className="mb-4">Alla Recept</h2> {}
       <input
         type="text"
-        className="form-control mb-4" // Bootstrap formulärkontroll och marginal nedåt
+        className="form-control mb-4" 
         placeholder="Sök recept..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
@@ -52,16 +52,16 @@ function HomePage() {
         <p className="text-center text-muted">Inga recept att visa. <Link to="/add">Lägg till ett nytt!</Link></p>
       )}
 
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> {/* Bootstrap grid för responsiva receptkort */}
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> {}
         {filteredRecipes.map(recipe => (
-          <div key={recipe.id} className="col"> {/* Varje kort i en kolumn */}
-            <div className="card h-100 shadow-sm recipe-card"> {/* Bootstrap kort med skugga och höjd */}
-              {recipe.imageUrl && <img src={recipe.imageUrl} className="card-img-top" alt={recipe.title} />} {/* Bild högst upp på kortet */}
-              <div className="card-body"> {/* Kortets innehåll */}
-                <h3 className="card-title text-center mb-3">{recipe.title}</h3> {/* Kortrubrik */}
-                <p className="card-text text-muted">{recipe.description}</p> {/* Korttext */}
-                <div className="d-grid mt-3"> {/* Bootstrap för att få knappen att fylla bredden */}
-                  <Link to={`/recipes/${recipe.id}`} className="btn btn-cookbook-primary">Visa Recept</Link> {/* Anpassad knappstil */}
+          <div key={recipe.id} className="col"> {}
+            <div className="card h-100 shadow-sm recipe-card"> {}
+              {recipe.imageUrl && <img src={recipe.imageUrl} className="card-img-top" alt={recipe.title} />} {}
+              <div className="card-body"> {}
+                <h3 className="card-title text-center mb-3">{recipe.title}</h3> {}
+                <p className="card-text text-muted">{recipe.description}</p> {}
+                <div className="d-grid mt-3"> {}
+                  <Link to={`/recipes/${recipe.id}`} className="btn btn-cookbook-primary">Visa Recept</Link> {}
                 </div>
               </div>
             </div>
