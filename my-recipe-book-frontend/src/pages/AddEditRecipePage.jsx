@@ -92,7 +92,7 @@ function AddEditRecipePage() {
       <h2 className="mb-4 text-center">{isEditing ? 'Redigera Recept' : 'Lägg till Nytt Recept'}</h2> {}
       {error && <div className="alert alert-danger text-center" role="alert">{error}</div>} {}
       <form onSubmit={handleSubmit}>
-        <div className="mb-3"> {/}
+        <div className="mb-3"> {}
           <label htmlFor="title" className="form-label">Titel:</label> {}
           <input
             type="text"
