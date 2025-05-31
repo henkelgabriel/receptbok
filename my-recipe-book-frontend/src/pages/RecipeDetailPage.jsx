@@ -85,8 +85,8 @@ function RecipeDetailPage() {
       )}
 
       <div className="d-flex justify-content-center gap-2 mt-4">
-        <button onClick={() => navigate(`/edit/${recipe.id}`)} className="btn btn-cookbook-primary">Redigera Recept</button>
-        <button onClick={handleDelete} className="btn btn-danger">Ta bort Recept</button>
+        <button onClick={() => navigate(`/edit/${recipe.id}`)} className="btn btn-cookbook-success">Redigera Recept</button>
+        <button onClick={handleDelete} className="btn btn-cookbook-danger">Ta bort Recept</button>
       </div>
       <div className="d-grid mt-3">
         <button onClick={() => navigate('/')} className="btn btn-secondary">Tillbaka till alla recept</button>

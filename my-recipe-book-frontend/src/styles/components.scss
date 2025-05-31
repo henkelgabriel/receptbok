@@ -3,7 +3,7 @@
 // Importera variabler
 @import 'variables';
 
-// Anpassad knapp-stil för kokbokstema
+
 .btn-cookbook-primary {
     background-color: $cookbook-accent !important;
     color: white !important;
@@ -19,9 +19,10 @@
         background-color: $cookbook-primary !important;
         border-color: $cookbook-accent !important;
     }
+
 }
 
-// Övriga Bootstrap-knappar för att matcha temat lite bättre
+
 .btn-secondary {
     background-color: $cookbook-secondary !important;
     color: $cookbook-text-light !important;
@@ -30,6 +31,38 @@
     &:hover {
         background-color: darken($cookbook-secondary, 10%) !important;
         border-color: $cookbook-text-light !important;
+    }
+}
+.btn-cookbook-danger {
+    background-color: $cookbook-danger !important;
+    color: white !important;
+    border: 1px solid darken($cookbook-danger, 10%) !important; 
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-right: 0.5rem;
+
+    &:hover {
+        background-color: darken($cookbook-danger, 10%) !important; 
+        border-color: darken($cookbook-danger, 20%) !important; 
+    }
+}
+.btn-cookbook-success {
+    background-color: $cookbook-success !important;
+    color: white !important;
+    border: 1px solid darken($cookbook-success, 10%) !important; 
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-right: 0.5rem;
+
+    &:hover {
+        background-color: darken($cookbook-success, 10%) !important; 
+        border-color: darken($cookbook-success, 20%) !important; 
     }
 }
 
@@ -69,6 +102,7 @@
         font-size: 0.95rem;
         line-height: 1.5;
         flex-grow: 1; // Tar upp tillgängligt utrymme
+        font-weight: bold;
     }
 
     .btn {
