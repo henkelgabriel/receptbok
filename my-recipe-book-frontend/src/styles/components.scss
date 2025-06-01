@@ -72,7 +72,7 @@
     border-radius: $border-radius-base;
     box-shadow: $box-shadow-subtle;
     overflow: hidden; // Klipp av innehåll som går utanför de rundade hörnen
-    height: 100%; // Viktigt för h-100 i grid
+    height: 100%; 
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
     &:hover {
